@@ -1,0 +1,6 @@
+username_value="saad"
+password_value="Medad@123"
+Campus_Name="test 5"
+Campus_Code="1005"
+Campus_location_data="Alexandria"
+Press_Keys="ENTER"
