@@ -17,7 +17,9 @@ login by admin
     Maximize Browser Window
     Wait Until Page Contains Element    //input[@name="username"]    timeout=10s
     Input Text    ${username}    ${username_value}
+    Sleep    1
     Input Text    ${password}    ${password_value}
+    Sleep    1
     Wait Until Page Contains Element    ${submit_button}    timeout=15s
     Click Element	${submit_button}
     Wait Until Page Contains Element    ${avatar_Element}   timeout=15s
@@ -107,6 +109,7 @@ fill mass Enrollment forme
 
     Click Element    ${Default_Enrolled_status}
     Wait Until Page Contains Element  ${Enrolled_status}
+    Sleep    1
     Click Element    ${Enrolled_status}
 
 
