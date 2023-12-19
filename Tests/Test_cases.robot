@@ -16,17 +16,17 @@ Create class Enrollment
     press add button
     fill class Enrollment forme
     submmite forme
-    Succfully submitt
+    Error message
     
 
 Create mass Enrollment
     login by admin
     select Enrollment tap
-    select class Enrollment doctype
-    press add button
-    fill class Enrollment forme
+    select mass Enrollment doctype
+    press add New Mass Enrollment button
+    fill mass Enrollment forme
     submmite forme
-    Error message
+    #Error message
 
 
 Deletecampus by api

@@ -13,14 +13,14 @@ ${site_url}        https://cmp.medadstg.com/
 
 *** Keywords ***
 login by admin
-    Open Browser    https://cmp.medadstg.com/login    browser=chrome
+    Open Browser    https://cmp.medadstg.com/login       chrome
     Maximize Browser Window
     Wait Until Page Contains Element    //input[@name="username"]    timeout=10s
     Input Text    ${username}    ${username_value}
     Input Text    ${password}    ${password_value}
-    Wait Until Page Contains Element    ${submit_button}    timeout=10s
+    Wait Until Page Contains Element    ${submit_button}    timeout=15s
     Click Element	${submit_button}
-    Wait Until Page Contains Element    ${avatar_Element}   timeout=10
+    Wait Until Page Contains Element    ${avatar_Element}   timeout=15s
 select Enrollment tap
     Wait Until Page Contains Element  ${enrollment_Element}
     Sleep    2
@@ -65,6 +65,8 @@ fill class Enrollment forme
     
     
 submmite forme
+     Execute Javascript    window.scrollTo(0,0)
+     Wait Until Page Contains Element    ${submmite_forme}
      Click Element    ${submmite_forme}
 
 Succfully submitt
@@ -72,6 +74,42 @@ Succfully submitt
 
 Error message
     Wait Until Page Contains Element  ${Error_message}
+
+
+select mass Enrollment doctype    Wait Until Page Contains Element  ${mass_enrollment_element} 
+    Sleep    2
+    Click Element   ${mass_enrollment_element}
+    
+press add New Mass Enrollment button
+    Wait Until Page Contains Element  ${New_Mass_Enrollment_button}    10s
+    Sleep    1    
+    Click Element    ${New_Mass_Enrollment_button}
+fill mass Enrollment forme
+    Wait Until Page Contains Element   ${Academic_Term_fieldname}     10s
+    Click Element    ${Academic_Term_fieldname}
+    Wait Until Page Contains Element  ${Academic_Term_fieldname_doctype}    10s
+    Sleep    1
+    Click Element    ${Academic_Term_fieldname_doctype}
+
+    Click Element    ${Add_Row}
+    Wait Until Page Contains Element  ${select_student}
+    Sleep    1
+    Click Element    ${select_student}
+    Wait Until Page Contains Element  //input[@placeholder='Student ID']
+    Input Text    //input[@placeholder='Student ID']    S-2023-00199
+    Wait Until Page Contains Element  ${student_id}
+    Click Element    ${student_id}
+
+    Click Element    ${action_fieldname}
+    Wait Until Page Contains Element  ${action}
+    Click Element    ${action}
+    Sleep    1
+
+    Click Element    ${Default_Enrolled_status}
+    Wait Until Page Contains Element  ${Enrolled_status}
+    Click Element    ${Enrolled_status}
+
+
 
 
 Delete a Record From Doctype by API
