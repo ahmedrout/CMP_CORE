@@ -32,7 +32,7 @@ Campus_location="//*[@id='page-Campus']/div[2]/div[2]/div/div[3]/div[2]/div[1]/d
 mass_enrollment_element="//span[normalize-space()='Mass Enrollments']"
 New_Mass_Enrollment_button="//span[@data-label='Add%20Mass%20Enrollment']"
 Academic_Term_fieldname="//input[@class='input-with-feedback form-control bold']"
-Academic_Term_fieldname_doctype="//p[@title='202410']"
+Academic_Term_fieldname_doctype="//p[@title='20241']"
 Add_Row="//label[normalize-space()='Students List']//following::button[normalize-space()='Add Row'][1]"
 select_student="(//div[@data-fieldname='student_id'])[2]"
 student_id="//p[@title='S-2023-00199']"
@@ -40,5 +40,13 @@ action_fieldname="//select[@type='text' and @data-fieldname='action']"
 action="//select[@type='text' and @data-fieldname='action']//option[@value='Add a Class']"
 Default_Enrolled_status="//*[@id='page-Mass Enrollment']/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/div/div/div[2]/div[5]/div[2]/div/form/div[2]/div/div[2]/div[1]/div/div/input"
 Enrolled_status="//p[@title='Enrolled']"
+add_classes="//label[normalize-space()='Classes']//following::button[normalize-space()='Add Row'][1]"
+select_class="(//div[@data-fieldname='class'])[2]"
+select_class_2="(//div[@data-fieldname='class'])[4]"
+class_name="//p[@title='202410-انج 101-1-تمارين / عملي-117']"
+class_name_2="//p[@title='202410-انج 101-1-نظري-091']"
+select_student="(//input[@class='grid-row-check'])[3]"
+click_Run="//button[normalize-space()='Run']"
+
 
 

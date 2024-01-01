@@ -1,6 +1,8 @@
 *** Settings ***
 Library   SeleniumLibrary
 Library   RequestsLibrary
+Library    XML
+Library    Telnet
 Variables   ../Resources/locators.py
 Variables   ../Resources/testdata.py
 
@@ -97,8 +99,10 @@ fill mass Enrollment forme
     Wait Until Page Contains Element  ${select_student}
     Sleep    1
     Click Element    ${select_student}
-    Wait Until Page Contains Element  //input[@placeholder='Student ID']
-    Input Text    //input[@placeholder='Student ID']    S-2023-00199
+    Wait Until Page Contains Element  (//div[@data-fieldname="student_id"])[2]
+    Click Element    (//div[@data-fieldname="student_id"])[2]
+    Wait Until Page Contains Element    //input[@data-fieldname='student_id']
+    Input Text    //input[@data-fieldname='student_id']    S-2023-00199
     Wait Until Page Contains Element  ${student_id}
     Click Element    ${student_id}
 
@@ -111,6 +115,41 @@ fill mass Enrollment forme
     Wait Until Page Contains Element  ${Enrolled_status}
     Sleep    1
     Click Element    ${Enrolled_status}
+
+    Click Element    ${add_classes}
+    Wait Until Page Contains Element  ${select_class}
+    Sleep    1
+    Click Element    ${select_class}
+    Wait Until Page Contains Element  (//input[@placeholder='Class'])[1]
+    Input Text    (//input[@placeholder='Class'])[1]    202410-انج 101-1-تمارين / عملي-117
+    Wait Until Page Contains Element  ${class_name}
+    Click Element    ${class_name}
+
+    Click Element    ${add_classes}
+    Wait Until Page Contains Element  ${select_class_2}
+    Sleep    1
+    Click Element    ${select_class_2}
+    Wait Until Page Contains Element  (//input[@placeholder='Class'])[2]
+    Input Text    (//input[@placeholder='Class'])[2]    202410-انج 101-1-نظري-091
+    Wait Until Page Contains Element  ${class_name_2}
+    Click Element    ${class_name_2}
+
+
+select student
+    # Mouse Down    locator
+    Click Element    ${select_student}
+
+    Sleep    1
+
+click run button
+
+    Mouse Down    (//input[@class='grid-row-check'])[3]
+    click Element    (//input[@class='grid-row-check'])[3]
+    Mouse Down    ${click_Run}
+    Click Element    ${click_Run}
+    # Element Text Should Be    //*[@id="page-Mass Enrollment"]/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/div/div/div[2]/div[4]/div[2]/div/form/div[2]/div/div[2]/div/div[2]/div[1]/div/div/div[8]/div[2]    Success
+    Wait Until Page Contains Element    //*[@id='alert-container']    timeout=10
+    Page Should Contain    Saved     
 
 
 

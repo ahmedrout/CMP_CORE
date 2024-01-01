@@ -29,6 +29,18 @@ Create mass Enrollment
     #Error message
 
 
+ Create mass Enrollment with Run Moode
+    login by admin
+    select Enrollment tap
+    select mass Enrollment doctype
+    press add New Mass Enrollment button
+    fill mass Enrollment forme
+    select student
+    click run button
+    
+
+
+
 Deletecampus by api
     Delete a Record From Doctype by API    Campus    test 5
 
