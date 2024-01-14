@@ -1,5 +1,6 @@
 *** Settings ***
 Resource    ../Pages/core.robot
+Resource    ../Pages/Enrollment/Enrollment.robot
 
 *** Variables ***
 ${site_url}        https://cmp.medadstg.com/
