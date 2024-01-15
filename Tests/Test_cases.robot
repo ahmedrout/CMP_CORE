@@ -10,14 +10,14 @@ ${site_url}        https://cmp.medadstg.com/
 Login by admin username
    login by admin
 
-Create class Enrollment
-    login by admin
-    select Enrollment tap
-    select class Enrollment doctype
-    press add button
-    fill class Enrollment forme
-    submmite forme
-    Error message
+# Create class Enrollment
+#     login by admin
+#     select Enrollment tap
+#     select class Enrollment doctype
+#     press add button
+#     fill class Enrollment forme
+#     submmite forme
+#     Error message
     
 
 Create mass Enrollment
